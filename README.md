@@ -64,6 +64,21 @@ Test automation portfolio showing different types of tests for a survey and anal
 
 **Why this is important:** First impressions matter. Broken onboarding loses users immediately. This validates critical user experience flows and serves as smoke testing for core navigation.
 
+### 🔍 Review Management Testing (`ReviewsPageTests.cs`)
+**Type of testing:** Regression testing and data integrity validation with realistic test data
+
+**What it tests:** Business owners managing customer reviews and feedback sources.
+
+**How it works:**
+1. Creates fake review data using Bogus library (realistic names, star ratings, comments)
+2. Business owner adds sources to collect customer reviews 
+3. Replies to customer reviews, edits replies, and deletes replies
+4. Deletes entire review sources with confirmation prompts
+5. Tests what happens when users hit their plan limits (upgrade modals)
+6. Checks success messages appear when actions work
+
+**Why this is important:** These features were previously tested manually, so automation prevents regression bugs when code changes. Data operations like deleting reviews or sources are high-risk - if they break, businesses could lose critical customer data or be unable to respond to feedback. Automated regression testing catches these breaks before customers are affected.
+
 ## Testing Strategy Demonstrated
 
 - **Regression Testing** - Automatically catches when updates break existing features
