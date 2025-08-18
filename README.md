@@ -1,2 +1,115 @@
 # Example_Playwright_Tests_CSharp
-Anonymised Playwright test examples for a SaaS platform, focusing on survey results and analytics sections.
+
+# Playwright C# Test Automation Examples
+
+Test automation portfolio showing different types of tests for a survey and analytics application using Playwright and C#.
+
+## What These Tests Do
+
+### Visual Regression Testing (`ChartsTests.cs`)
+**Type of testing:** Visual regression testing
+
+**What it tests:** A user creates a pie chart from survey data and the chart displays correctly.
+
+**How it works:**
+1. Creates fake survey data (6 responses for different colors)
+2. User logs in and goes to the reports page
+3. Clicks "Add Chart" and selects "Pie Chart"
+4. Takes a screenshot of the chart
+5. Compares it with a saved "good" version to check nothing broke
+
+**Why this is important:** Charts can break when code changes or CSS updates. Visual regression testing catches these bugs automatically before users see them.
+
+### End-to-End Integration Testing (`SharedViewsTests.cs`)
+**Type of testing:** End-to-end workflows, multi-user scenarios, and security testing
+
+**What it tests:** Users can share their reports with other people via links.
+
+**How it works:**
+1. User creates a report with charts
+2. Clicks "Share" and creates a sharing link
+3. Test opens the link in a new browser tab (simulating external user access)
+4. Checks the shared page shows correctly
+5. Tests password protection and custom branding work
+6. Validates different user permission levels
+
+**Why this is important:** Sharing involves multiple systems working together - authentication, permissions, URL generation, and cross-page functionality. E2E testing ensures the complete user journey works.
+
+### Functional and Data Integrity Testing (`TextAnalysisPageTests.cs`) 
+**Type of testing:** Functional testing, CRUD operations
+
+**What it tests:** Users can categorize and search through text responses.
+
+**How it works:**
+1. Creates fake survey with 6 text responses about a product
+2. User goes to text analysis page
+3. Creates categories like "Positive Feedback" and "Bug Reports"
+4. Assigns responses to categories
+5. Tests search highlighting works
+6. Deletes a category and checks it stays deleted after page refresh
+
+**Why this is important:** Data operations (create, read, update, delete) are critical business functions. This tests data persistence, search functionality, and ensures user changes are properly saved.
+
+### User Experience and Smoke Testing (`ProductTours.cs`)
+**Type of testing:** UX validation, onboarding flow testing, and smoke tests
+
+**What it tests:** New users get guided tours showing them how to use the app.
+
+**How it works:**
+1. User logs in for first time
+2. Product tour popup appears saying "Welcome!"
+3. Test clicks through each tour step
+4. Checks each step shows the right information
+5. Confirms tour closes properly at the end
+
+**Why this is important:** First impressions matter. Broken onboarding loses users immediately. This validates critical user experience flows and serves as smoke testing for core navigation.
+
+## Testing Strategy Demonstrated
+
+- **Regression Testing** - Automatically catches when updates break existing features
+- **Security Testing** - Validates password protection and access controls work
+- **Performance Testing** - Checks page loads and interactions respond quickly
+- **Smoke Testing** - Confirms core functionality works before deeper testing
+
+## How The Code Is Organised
+
+- **Tests/** - The actual test files that run the scenarios above
+- **PageObjects/** - Code that knows how to interact with each webpage (clicking buttons, filling forms)
+- **Helpers/** - Shared code for taking screenshots and creating fake test data
+- **Data/Images/** - Where chart screenshots are saved for comparison
+
+## What This Shows About My Testing Skills
+
+- I understand **different types of testing** and when to use each approach
+- I can automate **complex user journeys** that span multiple pages and systems
+- I write tests that provide **business value** by catching real bugs
+- I follow **industry best practices** like Page Object Model and data-driven testing
+- I implement **modern testing techniques** like visual regression testing
+- My code is **maintainable and scalable** for long-term test suite growth
+
+## Tools and Technologies
+
+- **Playwright** - Modern browser automation framework
+- **C#** - Strongly-typed programming with async/await patterns
+- **NUnit** - Test framework with parallel execution support
+- **ImageSharp** - Pixel-perfect visual comparison library
+- **Claude.ai and ChatGPT** - AI-assisted development for faster delivery
+
+*I used AI tools to accelerate development and ensure best practices, but I understand every line of code and have validated all functionality through hands-on testing.*
+
+## Quality Assurance Approach
+
+These examples demonstrate my understanding that **test automation should:**
+- **Catch bugs early** in the development cycle
+- **Provide fast feedback** to developers
+- **Reduce manual testing effort** on repetitive tasks
+- **Increase confidence** in releases
+- **Document expected behavior** through executable specifications
+
+## Important Note
+
+These are real tests from production applications, but I've anonymised the business logic to maintain confidentiality while showcasing genuine technical capabilities.
+
+---
+
+**Ready to implement comprehensive test automation for your application? Let's discuss your testing needs!**
