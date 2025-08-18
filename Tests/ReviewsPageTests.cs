@@ -41,6 +41,17 @@ namespace TestFramework.Core.Tests.Tests.ReviewsManagement
             await Expect(reviewsSetup.GetAddSourceButton()).ToBeVisibleAsync(new() { Timeout = 10000 });
         }
 
+        // The Delete Source test found a bug: 
+        // Go to Reputation. There is only one source. 
+        // Delete the Source. 
+        // BUG: Notice that the Side Menu becomes thinner and a horizontal scroll bar appears. The user does not see the default "Add Source" button. 
+        // Refreshing the page doesn't "reset" to show "Add Source" button. 
+        // User: 00000
+        // Video attached
+        // Acceptance Criteria:
+        // When all sources are deleted, the Reputation Side Menu reverts to Default. 
+        // It shows the Add Source button. 
+
         [Test]
         public async Task ReviewsBusinessUserAddMoreSourcesUpgradeModal()
         {
