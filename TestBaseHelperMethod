@@ -1,0 +1,42 @@
+using TestFramework.Core.Tests.Data;
+using TestFramework.Core.Tests.Data.Users;
+using TestFramework.Core.Tests.Data.Content;
+using TestFramework.Core.Tests.Data.Projects;
+using TestFramework.Core.Tests.PageObjects.App.Authentication;
+using TestFramework.Shared.DataAccess;
+using TestFramework.Shared.Models;
+using TestFramework.Shared.Test.Classes;
+
+        /// <summary>
+        /// Creates a complete test setup with user, project, question and responses.
+        /// </summary>
+        /// <param name="planType">The level of the user to create.</param>
+        /// <param name="responsesCount">The number of responses to generate.</param>
+        /// <param name="questionText">The text of the question to create.</param>
+        /// <param name="options">The options for the question. If null, default options will be used.</param>
+        protected static (LoginAccount Account, Project Project, QuestionData Question) CreateTestData(
+        int planType = 11,
+        int responsesCount = 2,
+        string questionText = "What's your preference between the two options?",
+        string[]? options = null)
+        {
+            var userRepo = new UserRepository();
+            var responseRepo = new ResponseRepository();
+            var contentRepo = new ContentRepository();
+            var questionRepo = new QuestionRepository();
+            var projectRepo = new ProjectRepository();
+            var account = new UserRepository().CreateUser(planType);
+            var project = projectRepo.CreateProject(account.AccountId);
+            var content = contentRepo.CreateContent(project.ProjectId);
+            // Use provided options or default ones
+            var questionOptions = options ?? ["Option A", "Option B"];
+            var question = questionRepo.CreateSingleChoiceQuestion(project.ProjectId, content, questionText, questionOptions);
+            for (var i = 0; i < responsesCount; i++)
+            {
+                var user = userRepo.CreateResponse(project.ProjectId);
+                var optionId = question.Options[i % questionOptions.Length].OptionId;
+                responseRepo.CreateSingleChoiceResponse(user.UserId, project.ProjectId, question.QuestionId, optionId);
+            }
+            projectRepo.SetProjectResponses(project.ProjectId, responsesCount);
+            return (account, project, question);
+        }
