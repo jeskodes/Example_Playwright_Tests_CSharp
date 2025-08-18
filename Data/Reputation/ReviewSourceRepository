@@ -1,0 +1,29 @@
+using TestFramework.Shared.Models;
+
+namespace TestFramework.Core.Tests.Data.Reviews;
+
+internal class ReviewSourceRepository : RepositoryBase
+{
+    public ReviewSource CreateReviewSource(int organisationId, string title = "Customer Reviews")
+    {
+        var newSource = new ReviewSource
+        {
+            OrganisationId = organisationId,
+            Title = title,
+            DateCreatedUtc = DateTime.UtcNow,
+            DateUpdatedUtc = DateTime.UtcNow,
+            // IsActive = true
+        };
+
+        DbContext.ReviewSources.Add(newSource);
+        DbContext.SaveChanges();
+        return newSource;
+    }
+
+    // This method safely returns null if no organisation is found
+    public Organisation? GetOrganisationByOwnerUserId(int userId)
+    {
+        return DbContext.Organisations
+            .FirstOrDefault(o => o.OwnerUserId == userId);
+    }
+}
