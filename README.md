@@ -95,7 +95,8 @@ Test automation portfolio showing different types of tests for a survey and anal
 - **ImageSharp** - Pixel-perfect visual comparison library
 - **Claude.ai and ChatGPT** - AI-assisted development for faster delivery
 
-*I used AI tools to accelerate development and ensure best practices, but I understand every line of code and have validated all functionality through hands-on testing.*
+*I used AI tools to accelerate development and ensure best practices.*
+*Each pull request was first reviewed by a Senior Dev and changes made according to their feedback*
 
 ## Quality Assurance Approach
 
