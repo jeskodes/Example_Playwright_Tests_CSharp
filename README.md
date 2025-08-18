@@ -63,7 +63,7 @@ Test automation portfolio showing different types of tests for a survey and anal
 
 **Why this is important:** First impressions matter. Broken onboarding loses users immediately. This validates critical user experience flows and serves as smoke testing for core navigation.
 
-### 🔍 Review Management Testing (`ReviewsPageTests.cs`)
+### Review Management Testing (`ReviewsPageTests.cs`)
 **Type of testing:** Regression testing and data integrity validation with realistic test data
 
 **What it tests:** Business owners managing customer reviews and feedback sources.
