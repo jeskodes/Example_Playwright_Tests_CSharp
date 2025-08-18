@@ -1,4 +1,3 @@
-# Example_Playwright_Tests_CSharp
 
 # Playwright C# Test Automation Examples
 
