@@ -2,6 +2,8 @@ using Microsoft.Playwright;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
+// Image comparison failed by dimensions - 1 px out so need to refine to allow 
+// for minor size differences.
 namespace TestFramework.Core.Tests.Helper
 {
     public class ImagesHelper(IPage page)
