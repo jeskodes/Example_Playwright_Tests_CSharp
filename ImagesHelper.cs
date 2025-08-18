@@ -148,6 +148,7 @@ namespace TestFramework.Core.Tests.Helper
                 double totalPixels = baselineImage.Width * baselineImage.Height;
                 double differencePercentage = (double)diffPixels / totalPixels;
 
+                // P2 format = percentage with 2 decimal places (e.g., 0.0234 becomes "2.34%")
                 if (differencePercentage > pixelDifferenceThreshold)
                 {
                     Console.WriteLine($"Images differ by {differencePercentage:P2} (threshold: {pixelDifferenceThreshold:P2})");
