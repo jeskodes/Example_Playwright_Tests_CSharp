@@ -110,5 +110,5 @@ These examples demonstrate my understanding that **test automation should:**
 
 ## Important Note
 
-These are real tests from production applications, but I've anonymised the business logic to maintain confidentiality while showcasing genuine technical capabilities.
+These are real tests from production applications, but I've anonymised the business logic to maintain confidentiality.
 
