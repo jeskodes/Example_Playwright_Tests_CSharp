@@ -120,8 +120,8 @@ These examples demonstrate my understanding that **test automation should:**
 ## Important Note
 
 *I used AI tools to continue to develop my knowledge and skills of Playwright and to accelerate development and ensure best practices.*
-<br>
+<br><br>
 *Each pull request was first reviewed by a Senior Dev and changes were made according to their valuable feedback and advice.*
-<br>
+<br><br>
 *These are real tests from production applications, but I've anonymised the business logic to maintain confidentiality.*
 
