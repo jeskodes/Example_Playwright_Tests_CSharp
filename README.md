@@ -15,7 +15,7 @@ Test automation portfolio showing different types of tests for a survey and anal
 2. User logs in and goes to the reports page
 3. Clicks "Add Chart" and selects "Pie Chart"
 4. Takes a screenshot of the chart
-5. Compares it with a saved "good" version to check nothing broke
+5. Compares it with a saved "good" version to verify the chart displays as expected.
 
 **Why this is important:** Charts can break when code changes or CSS updates. Visual regression testing catches these bugs automatically before users see them.
 
@@ -69,7 +69,7 @@ Test automation portfolio showing different types of tests for a survey and anal
 **What it tests:** Business owners managing customer reviews and feedback sources.
 
 **How it works:**
-1. Creates fake review data using Bogus library (realistic names, star ratings, comments)
+1. Creates fake review data using Bogus library - *this aspect is not my work and I initially had a working test which directly hooked up to the database to add fake data.* 
 2. Business owner adds sources to collect customer reviews 
 3. Replies to customer reviews, edits replies, and deletes replies
 4. Deletes entire review sources with confirmation prompts
@@ -103,10 +103,9 @@ Test automation portfolio showing different types of tests for a survey and anal
 
 ## Tools and Technologies
 
-- **Playwright** - Modern browser automation framework
+- **Playwright** - UI automation framework
 - **C#** - Strongly-typed programming with async/await patterns
-- **NUnit** - Test framework with parallel execution support
-- **ImageSharp** - Pixel-perfect visual comparison library
+- **ImageSharp** - Visual comparison tool
 - **Claude.ai and ChatGPT** - AI-assisted development for faster delivery
 
 ## Quality Assurance Approach
@@ -114,15 +113,15 @@ Test automation portfolio showing different types of tests for a survey and anal
 These examples demonstrate my understanding that **test automation should:**
 - **Catch bugs early** in the development cycle
 - **Provide fast feedback** to developers
-- **Reduce manual testing effort** on repetitive tasks
+- **Reduce manual testing effort** on repetitive tasks or tasks previously manually tested that can be fragile
 - **Increase confidence** in releases
 - **Document expected behavior** through executable specifications
 
 ## Important Note
 
-*I used AI tools to accelerate development and ensure best practices.*
+*I used AI tools to continue to develop my knowledge and skills of Playwright and to accelerate development and ensure best practices.*
 <br>
-*Each pull request was first reviewed by a Senior Dev and changes made according to their feedback.*
+*Each pull request was first reviewed by a Senior Dev and changes were made according to their valuable feedback and advice.*
 <br>
 *These are real tests from production applications, but I've anonymised the business logic to maintain confidentiality.*
 
