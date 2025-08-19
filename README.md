@@ -88,7 +88,7 @@ Test automation portfolio showing different types of tests for a survey and anal
 ## How The Code Is Organised
 
 - **Tests/** - The actual test files that run the scenarios above
-- **PageObjects/** - Code that knows how to interact with each webpage (clicking buttons, filling forms)
+- **PageObjects/** - Separates UI interactions from test logic to improve maintainability and readability.
 - **Helpers/** - Shared code for taking screenshots and creating fake test data
 - **Data/Images/** - Where chart screenshots are saved for comparison
 
