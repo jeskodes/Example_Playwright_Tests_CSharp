@@ -69,7 +69,7 @@ Test automation portfolio showing different types of tests for a survey and anal
 **What it tests:** Business owners managing customer reviews and feedback sources.
 
 **How it works:**
-1. Creates fake review data using Bogus library - *this aspect is not my work and I initially had a working test which directly hooked up to the database to add fake data.* 
+1. Creates fake review data using Bogus library - *this aspect is not my work and I initially had a working test which directly hooked up to the database to add fake data; while this worked it was much less efficient than using the Bogus Library.* 
 2. Business owner adds sources to collect customer reviews 
 3. Replies to customer reviews, edits replies, and deletes replies
 4. Deletes entire review sources with confirmation prompts
